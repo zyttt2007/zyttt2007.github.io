@@ -70,8 +70,23 @@ def render_projects(items):
             f'<a href="{e(l["url"])}" target="_blank" rel="noreferrer">{e(l["label"])}</a>'
             for l in x.get("links", [])
         )
+        first = (x.get("links") or [{}])[0].get("url", "#")
+        media = []
+        if x.get("photo"):
+            media.append(
+                f'<a class="media-photo" href="{e(first)}" target="_blank" rel="noreferrer" title="真实摄影配图">'
+                f'<img src="{e(x["photo"])}" alt="{e(x["name"])} 主题真实摄影照片" loading="lazy" />'
+                f'<span class="media-cap">真实摄影</span></a>'
+            )
+        if x.get("image"):
+            media.append(
+                f'<a class="media-shot" href="{e(first)}" target="_blank" rel="noreferrer" title="线上真实界面截图">'
+                f'<img src="{e(x["image"])}" alt="{e(x["name"])} 网站真实界面截图" loading="lazy" />'
+                f'<span class="media-cap">网站界面</span></a>'
+            )
+        cover = ('\n          <div class="project-media">' + "".join(media) + '</div>') if media else ''
         out.append(
-            '<article class="project-card">\n'
+            '<article class="project-card">\n' + cover + '\n'
             '          <div class="project-top">\n'
             f'            <span class="project-no">{i:02d}</span>\n'
             f'            <span class="project-kind">{e(x["kind"])}</span>\n'

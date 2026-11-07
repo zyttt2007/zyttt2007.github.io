@@ -5,7 +5,9 @@
 (() => {
   'use strict';
 
-  const STORE_KEY = 'personal-site:data:v1';
+  const STORE_KEY = 'personal-site:data:v3';
+  const LEGACY_KEYS = ['personal-site:data:v1', 'personal-site:data:v2'];
+  let hadLegacy = false;
   const node = document.getElementById('site-data');
   if (!node) return;
 
@@ -24,9 +26,19 @@
   function load() {
     try {
       const raw = localStorage.getItem(STORE_KEY);
-      if (!raw) return null;
-      const d = JSON.parse(raw);
-      return (d && Array.isArray(d.projects) && typeof d.name === 'string') ? d : null;
+      if (raw) {
+        const d = JSON.parse(raw);
+        if (d && Array.isArray(d.projects) && typeof d.name === 'string') return d;
+      }
+      // 站点默认内容升级后，旧版本草稿不再自动套用（否则会一直看到过期页面），只做备份
+      for (const k of LEGACY_KEYS) {
+        const old = localStorage.getItem(k);
+        if (old) {
+          hadLegacy = true;
+          try { localStorage.setItem(k + ':backup', old); } catch (e) {}
+        }
+      }
+      return null;
     } catch (err) { return null; }
   }
   let data = load() || clone(defaults);
@@ -71,7 +83,8 @@
       { key: 'kind', label: '分类（如 数据查询网站）', type: 'text' },
       { key: 'name', label: '作品名称', type: 'text' },
       { key: 'en', label: '英文名 / 副名', type: 'text' },
-      { key: 'image', label: '封面图地址', type: 'text', hint: '如 images/img-blog.jpg 或 https://... ；留空则不显示图片' },
+      { key: 'photo', label: '真实摄影配图地址', type: 'text', hint: '如 images/photo-blog.jpg；留空则不显示照片' },
+      { key: 'image', label: '网站界面截图地址', type: 'text', hint: '如 images/img-blog.jpg 或 https://... ；留空则不显示截图' },
       { key: 'desc', label: '一句话简介', type: 'area' },
       { key: 'features', label: '功能要点', type: 'lines', hint: '每行一条' },
       { key: 'tech', label: '技术标签', type: 'lines', hint: '每行一个，如 React' },
@@ -101,7 +114,7 @@
       case 'stats': return ['0', '说明'];
       case 'education': return { date: '', title: '', desc: '', extra: '' };
       case 'skills': return { icon: '✦', title: '', tags: [], note: '' };
-      case 'projects': return { kind: '', name: '', en: '', image: '', desc: '', features: [], tech: [], links: [] };
+      case 'projects': return { kind: '', name: '', en: '', photo: '', image: '', desc: '', features: [], tech: [], links: [] };
       case 'hobbies': return { mark: '✦', title: '', desc: '' };
       case 'contacts': return { label: '', text: '', url: 'https://', note: '' };
       default: return {};
@@ -145,6 +158,20 @@
   }
   const addBtn = (list) => `<button type="button" class="add-btn" data-ui data-act="add-item" data-list="${list}">＋ 新增${LIST_NAMES[list]}</button>`;
 
+  function mediaHtml(x) {
+    const first = esc(url((x.links || [{}])[0].url));
+    const parts = [];
+    if (x.photo) parts.push(
+      `<a class="media-photo" href="${first}" target="_blank" rel="noreferrer" title="真实摄影配图">` +
+      `<img src="${esc(x.photo)}" alt="${esc(x.name)} 主题真实摄影照片" loading="lazy" />` +
+      `<span class="media-cap">真实摄影</span></a>`);
+    if (x.image) parts.push(
+      `<a class="media-shot" href="${first}" target="_blank" rel="noreferrer" title="线上真实界面截图">` +
+      `<img src="${esc(x.image)}" alt="${esc(x.name)} 网站真实界面截图" loading="lazy" />` +
+      `<span class="media-cap">网站界面</span></a>`);
+    return parts.length ? `<div class="project-media">${parts.join('')}</div>` : '';
+  }
+
   const R = {
     about: (items) => items.map((x, i) => `<p>${esc(x)}${tools('about', i)}</p>`).join('') + addBtn('about'),
     education: (items) => items.map((x, i) => `
@@ -166,7 +193,7 @@
         <div class="stat">${tools('stats', i)}<b>${esc(x[0])}</b><span>${esc(x[1])}</span></div>`).join('') + addBtn('stats'),
     projects: (items) => items.map((x, i) => `
         <article class="project-card">${tools('projects', i)}
-          ${x.image ? `<a class="project-cover-link" href="${esc(url((x.links || [{}])[0].url))}" target="_blank" rel="noreferrer"><img class="project-cover" src="${esc(x.image)}" alt="${esc(x.name)} 网站真实界面截图" loading="lazy" /></a>` : ''}
+          ${mediaHtml(x)}
           <div class="project-top"><span class="project-no">${String(i + 1).padStart(2, '0')}</span><span class="project-kind">${esc(x.kind)}</span></div>
           <h3>${esc(x.name)} <span>${esc(x.en)}</span></h3>
           <p class="project-desc">${esc(x.desc)}</p>
@@ -245,6 +272,7 @@
       try {
         const d = JSON.parse(await f.text());
         if (!d || !Array.isArray(d.projects) || typeof d.name !== 'string') throw new Error('格式不对');
+        d.version = defaults.version;
         data = d; save(); render(); notify('数据已导入并保存');
       } catch (err) { notify('导入失败：请选择本页导出的 JSON 文件'); }
       file.value = '';
@@ -429,5 +457,6 @@
 
   buildUI();
   render();
+  if (hadLegacy) setTimeout(() => notify('站点内容已更新：本机旧草稿已备份，现在显示的是最新内容'), 800);
   if (new URLSearchParams(location.search).get('edit') === '1') setEditing(true);
 })();

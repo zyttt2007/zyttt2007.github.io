@@ -118,8 +118,10 @@ a:focus-visible{outline:3px solid rgba(47,98,216,.5); outline-offset:3px; border
   margin:0; background:var(--card); border:1px solid var(--line); border-radius:18px;
   padding:18px 18px 14px; box-shadow:var(--shadow);
 }
-.avatar-art{border-radius:12px; overflow:hidden; background:#e8f0ff}
-.avatar-art svg{display:block; width:100%; height:auto}
+.avatar-photo{
+  display:block; width:100%; aspect-ratio:1/1; object-fit:cover; object-position:center;
+  border-radius:12px; border:1px solid var(--line); background:#e8f0ff;
+}
 .avatar-card figcaption{text-align:center; font-size:12.5px; color:var(--muted); margin-top:12px}
 .about-text p{margin:0 0 16px; color:var(--ink-2); font-size:15.5px}
 .about-text p:first-child{font-size:17px; color:var(--ink); font-weight:600}
@@ -180,12 +182,20 @@ a:focus-visible{outline:3px solid rgba(47,98,216,.5); outline-offset:3px; border
   box-shadow:var(--shadow); transition:transform .2s, border-color .2s, box-shadow .2s;
 }
 .project-card:hover{transform:translateY(-3px); border-color:#c9d8f0; box-shadow:0 22px 42px -26px rgba(22,40,63,.42)}
-.project-cover-link{display:block; margin:0 0 16px; border-radius:10px}
-.project-cover-link:hover .project-cover{border-color:var(--blue)}
-.project-cover{
-  display:block; width:100%; aspect-ratio:16/10; object-fit:cover; object-position:top center;
-  border:1px solid var(--line); border-radius:10px; background:#f2f6fc;
+/* 成果配图：左边真实摄影照片，右边线上真实界面截图，两张都可点开网站 */
+.project-media{display:flex; gap:8px; margin:0 0 16px}
+.project-media a{
+  position:relative; display:block; flex:1 1 0; min-width:0; height:116px;
+  border:1px solid var(--line); border-radius:10px; overflow:hidden; background:#f2f6fc;
   transition:border-color .18s;
+}
+.project-media a:hover{border-color:var(--blue)}
+.project-media img{display:block; width:100%; height:100%; object-fit:cover}
+.project-media a.media-shot img{object-position:top center}
+.media-cap{
+  position:absolute; left:0; right:0; bottom:0; padding:5px 8px;
+  font-size:10.5px; line-height:1.2; color:#fff; letter-spacing:.02em;
+  background:linear-gradient(transparent, rgba(20,32,54,.76));
 }
 .project-top{display:flex; align-items:center; gap:10px; margin-bottom:12px}
 .project-no{font-size:12px; font-weight:700; color:#fff; background:var(--blue); border-radius:6px; padding:2px 8px}
