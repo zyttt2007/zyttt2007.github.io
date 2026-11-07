@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{{NAME}} · 个人介绍网站</title>
+<meta name="description" content="数字经济专业大一学生的个人介绍网站：关于我、学习经历、技能、项目成果、爱好与联系方式。" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%232f62d8'/%3E%3Ctext x='50' y='69' font-size='56' font-family='Georgia,serif' fill='white' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!--
+  ============================================================
+  这个页面的所有文字与项目卡片都可以在网页上直接修改、增删、保存。
+  右下角「✎ 编辑内容」进入编辑模式，改动自动保存在当前浏览器；
+  要让公网所有人都看到新内容，点编辑条上的「导出 index.html」
+  再替换仓库里的同名文件即可。
+  默认数据同时保存在 site-data.json，可用 python build.py 重建本页。
+  ============================================================
+-->
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#top"><span data-text="name">{{NAME}}</span><span class="brand-sub"> · 个人主页</span></a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#about">关于我</a>
+      <a href="#education">学习经历</a>
+      <a href="#skills">技能</a>
+      <a href="#projects">项目</a>
+      <a href="#hobbies">爱好</a>
+      <a href="#contact">联系</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="hero-inner">
+      <p class="hero-kicker">HELLO, NICE TO MEET YOU</p>
+      <h1><span data-text="name">{{NAME}}</span><span class="dot">.</span></h1>
+      <p class="hero-sub" data-text="heroSub">{{HERO_SUB}}</p>
+      <p class="hero-desc" data-text="heroDesc">{{HERO_DESC}}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">看看我做的项目 <span aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="https://github.com/zyttt2007" target="_blank" rel="noreferrer">GitHub 主页</a>
+      </div>
+    </div>
+    <a class="scroll-hint" href="#about">下滑了解更多 <span class="arrow" aria-hidden="true">↓</span></a>
+  </section>
+
+  <!-- 关于我 -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">01 / ABOUT</p>
+        <h2>关于我</h2>
+        <p class="section-desc" data-text="aboutDesc">{{ABOUT_DESC}}</p>
+      </div>
+      <div class="about-grid">
+        <figure class="avatar-card">
+          <div class="avatar-art" role="img" aria-label="卡通自画像：戴眼镜、穿连帽衫的学生">
+            <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="120" cy="120" r="120" fill="#e8f0ff" />
+              <circle cx="120" cy="120" r="92" fill="#d6e5ff" />
+              <path d="M32 240c6-52 40-78 88-78s82 26 88 78z" fill="#2f62d8" />
+              <path d="M92 166h56v26c0 15-56 15-56 0z" fill="#f2c9a8" />
+              <ellipse cx="120" cy="112" rx="52" ry="58" fill="#f7d6b7" />
+              <path d="M68 108c-4-40 16-62 52-62s56 22 52 62c-6-14-14-24-26-28-14 12-42 16-64 8-4 6-10 12-14 20z" fill="#26364d" />
+              <path d="M70 98c-10-2-12 18-2 22m102-22c10-2 12 18 2 22" fill="#f7d6b7" />
+              <rect x="86" y="106" width="28" height="22" rx="9" fill="none" stroke="#26364d" stroke-width="4" />
+              <rect x="126" y="106" width="28" height="22" rx="9" fill="none" stroke="#26364d" stroke-width="4" />
+              <path d="M114 116h12" stroke="#26364d" stroke-width="4" />
+              <circle cx="100" cy="117" r="3.2" fill="#26364d" />
+              <circle cx="140" cy="117" r="3.2" fill="#26364d" />
+              <path d="M110 139c6 5 14 5 20 0" fill="none" stroke="#b9744f" stroke-width="3.5" stroke-linecap="round" />
+              <path d="M92 166l28 24 28-24" fill="none" stroke="#ffffff" stroke-width="6" stroke-linejoin="round" opacity=".9" />
+            </svg>
+          </div>
+          <figcaption>没找到合适的照片，先放一张自画像 :)</figcaption>
+        </figure>
+        <div class="about-text" id="about-paragraphs" data-list="about">
+          {{ABOUT_HTML}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 学习经历 -->
+  <section class="section section-alt" id="education">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">02 / EDUCATION</p>
+        <h2>学习经历</h2>
+        <p class="section-desc" data-text="educationDesc">{{EDUCATION_DESC}}</p>
+      </div>
+      <ol class="timeline" id="timeline" data-list="education">
+        {{EDUCATION_HTML}}
+      </ol>
+    </div>
+  </section>
+
+  <!-- 技能 -->
+  <section class="section" id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">03 / SKILLS</p>
+        <h2>技能与能力</h2>
+        <p class="section-desc" data-text="skillsDesc">{{SKILLS_DESC}}</p>
+      </div>
+      <div class="skill-grid" id="skill-grid" data-list="skills">
+        {{SKILLS_HTML}}
+      </div>
+    </div>
+  </section>
+
+  <!-- 成果与项目（重点） -->
+  <section class="section section-alt" id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">04 / PROJECTS · 重点</p>
+        <h2>成果与项目</h2>
+        <p class="section-desc" data-text="projectsDesc">{{PROJECTS_DESC}}</p>
+      </div>
+
+      <div class="stats" id="stats" data-list="stats" aria-label="项目数据概览">
+        {{STATS_HTML}}
+      </div>
+
+      <div class="project-grid" id="project-grid" data-list="projects">
+        {{PROJECTS_HTML}}
+      </div>
+
+      <div class="process">
+        <h3 data-text="processTitle">{{PROCESS_TITLE}}</h3>
+        <ol class="flow">
+          <li><b>01</b><span>数据库设计</span></li>
+          <li><b>02</b><span>写 PRD 需求</span></li>
+          <li><b>03</b><span>后端 API</span></li>
+          <li><b>04</b><span>前端页面</span></li>
+          <li><b>05</b><span>部署上线</span></li>
+        </ol>
+        <p data-text="processText">{{PROCESS_TEXT}}</p>
+      </div>
+
+      <div class="verify-note">
+        <strong>验证情况：</strong><span data-text="verifyText">{{VERIFY_TEXT}}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 爱好 -->
+  <section class="section" id="hobbies">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">05 / HOBBIES</p>
+        <h2>爱好</h2>
+        <p class="section-desc" data-text="hobbiesDesc">{{HOBBIES_DESC}}</p>
+      </div>
+      <div class="hobby-grid" id="hobby-grid" data-list="hobbies">
+        {{HOBBIES_HTML}}
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系 -->
+  <section class="section section-alt" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">06 / CONTACT</p>
+        <h2>联系我</h2>
+        <p class="section-desc" data-text="contactDesc">{{CONTACT_DESC}}</p>
+      </div>
+      <div class="contact-card" id="contact-card" data-list="contacts">
+        {{CONTACTS_HTML}}
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span data-text="footerLeft">{{FOOTER_LEFT}}</span>
+    <span data-text="footerRight">{{FOOTER_RIGHT}}</span>
+    <a href="#top">回到顶部 ↑</a>
+  </div>
+</footer>
+
+<script id="site-data" type="application/json">{{SITE_DATA_JSON}}</script>
+<script src="editor.js" defer></script>
+</body>
+</html>
