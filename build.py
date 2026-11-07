@@ -75,13 +75,13 @@ def render_projects(items):
         if x.get("photo"):
             media.append(
                 f'<a class="media-photo" href="{e(first)}" target="_blank" rel="noreferrer" title="真实摄影配图">'
-                f'<img src="{e(x["photo"])}" alt="{e(x["name"])} 主题真实摄影照片" loading="lazy" />'
+                f'<img src="{e(x["photo"])}" alt="{e(x["name"])} 主题真实摄影照片" loading="eager" />'
                 f'<span class="media-cap">真实摄影</span></a>'
             )
         if x.get("image"):
             media.append(
                 f'<a class="media-shot" href="{e(first)}" target="_blank" rel="noreferrer" title="线上真实界面截图">'
-                f'<img src="{e(x["image"])}" alt="{e(x["name"])} 网站真实界面截图" loading="lazy" />'
+                f'<img src="{e(x["image"])}" alt="{e(x["name"])} 网站真实界面截图" loading="eager" />'
                 f'<span class="media-cap">网站界面</span></a>'
             )
         cover = ('\n          <div class="project-media">' + "".join(media) + '</div>') if media else ''

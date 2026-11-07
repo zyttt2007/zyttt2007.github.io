@@ -163,11 +163,11 @@
     const parts = [];
     if (x.photo) parts.push(
       `<a class="media-photo" href="${first}" target="_blank" rel="noreferrer" title="真实摄影配图">` +
-      `<img src="${esc(x.photo)}" alt="${esc(x.name)} 主题真实摄影照片" loading="lazy" />` +
+      `<img src="${esc(x.photo)}" alt="${esc(x.name)} 主题真实摄影照片" loading="eager" />` +
       `<span class="media-cap">真实摄影</span></a>`);
     if (x.image) parts.push(
       `<a class="media-shot" href="${first}" target="_blank" rel="noreferrer" title="线上真实界面截图">` +
-      `<img src="${esc(x.image)}" alt="${esc(x.name)} 网站真实界面截图" loading="lazy" />` +
+      `<img src="${esc(x.image)}" alt="${esc(x.name)} 网站真实界面截图" loading="eager" />` +
       `<span class="media-cap">网站界面</span></a>`);
     return parts.length ? `<div class="project-media">${parts.join('')}</div>` : '';
   }
