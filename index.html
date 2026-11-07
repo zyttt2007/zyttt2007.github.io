@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>林知远 · 个人介绍网站</title>
+<meta name="description" content="数字经济专业大一学生的个人介绍网站：关于我、学习经历、技能、全栈项目成果、爱好与联系方式。" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%232f62d8'/%3E%3Ctext x='50' y='69' font-size='56' font-family='Georgia,serif' fill='white' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!--
+  ============================================================
+  【占位信息替换清单】把下面这些文字换成你的真实信息即可
+  1. 林知远          -> 你的名字（出现在：title、导航栏、首屏大标题、关于我、页脚）
+  2. 【籍贯】        -> 你的家乡（关于我）
+  3. 【学校名称】    -> 你的大学（学习经历 · 大学那段）
+  4. 【高中名称】    -> 你的高中（学习经历 · 高中那段）
+  5. your@email.com  -> 你的邮箱（联系我）
+  其余内容（三个项目、技能、课程、爱好）都按真实情况写，可直接使用。
+  ============================================================
+-->
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#top">林知远<span class="brand-sub"> · 个人主页</span></a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#about">关于我</a>
+      <a href="#education">学习经历</a>
+      <a href="#skills">技能</a>
+      <a href="#projects">项目</a>
+      <a href="#hobbies">爱好</a>
+      <a href="#contact">联系</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="hero-inner">
+      <p class="hero-kicker">HELLO, NICE TO MEET YOU</p>
+      <h1>林知远<span class="dot">.</span></h1>
+      <p class="hero-sub">数字经济专业大一在读 <span class="slash">/</span> 热爱编程与折腾</p>
+      <p class="hero-desc">喜欢把课本上学到的东西，做成能点开、能真的用一下的网页。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">看看我做的项目 <span aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="https://github.com/zyttt2007" target="_blank" rel="noreferrer">GitHub 主页</a>
+      </div>
+    </div>
+    <a class="scroll-hint" href="#about">下滑了解更多 <span class="arrow" aria-hidden="true">↓</span></a>
+  </section>
+
+  <!-- 关于我 -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">01 / ABOUT</p>
+        <h2>关于我</h2>
+        <p class="section-desc">先简单认识一下。</p>
+      </div>
+      <div class="about-grid">
+        <figure class="avatar-card">
+          <div class="avatar-art" role="img" aria-label="卡通自画像：戴眼镜、穿连帽衫的学生">
+            <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="120" cy="120" r="120" fill="#e8f0ff" />
+              <circle cx="120" cy="120" r="92" fill="#d6e5ff" />
+              <path d="M32 240c6-52 40-78 88-78s82 26 88 78z" fill="#2f62d8" />
+              <path d="M92 166h56v26c0 15-56 15-56 0z" fill="#f2c9a8" />
+              <ellipse cx="120" cy="112" rx="52" ry="58" fill="#f7d6b7" />
+              <path d="M68 108c-4-40 16-62 52-62s56 22 52 62c-6-14-14-24-26-28-14 12-42 16-64 8-4 6-10 12-14 20z" fill="#26364d" />
+              <path d="M70 98c-10-2-12 18-2 22m102-22c10-2 12 18 2 22" fill="#f7d6b7" />
+              <rect x="86" y="106" width="28" height="22" rx="9" fill="none" stroke="#26364d" stroke-width="4" />
+              <rect x="126" y="106" width="28" height="22" rx="9" fill="none" stroke="#26364d" stroke-width="4" />
+              <path d="M114 116h12" stroke="#26364d" stroke-width="4" />
+              <circle cx="100" cy="117" r="3.2" fill="#26364d" />
+              <circle cx="140" cy="117" r="3.2" fill="#26364d" />
+              <path d="M110 139c6 5 14 5 20 0" fill="none" stroke="#b9744f" stroke-width="3.5" stroke-linecap="round" />
+              <path d="M92 166l28 24 28-24" fill="none" stroke="#ffffff" stroke-width="6" stroke-linejoin="round" opacity=".9" />
+            </svg>
+          </div>
+          <figcaption>没找到合适的照片，先放一张自画像 :)</figcaption>
+        </figure>
+        <div class="about-text">
+          <p>我是林知远，来自【籍贯】，现在在【学校名称】读数字经济专业，大一。</p>
+          <p>专业课里最让我意外的是 Python 和 SQL：原来一堆看起来乱糟糟的数据，真的能被「问」出答案。微观经济学里那些关于选择和成本的说法，也常让我想到写代码时怎么取舍。</p>
+          <p>我不太会来事儿，但遇到一个跑不通的报错，能安安静静坐一下午；搞清楚原因的那一刻比什么都高兴。</p>
+          <p>周末一般在旧书店晃、在城市里乱走，或者回家给自己冲一杯手冲咖啡。这个网站和下面三个小项目，都是这学期一点点折腾出来的。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 学习经历 -->
+  <section class="section section-alt" id="education">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">02 / EDUCATION</p>
+        <h2>学习经历</h2>
+        <p class="section-desc">从高中到现在，一条简单的时间线。</p>
+      </div>
+      <ol class="timeline">
+        <li class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <p class="timeline-date">2023.09 — 2026.06</p>
+          <h3>【高中名称】 · 高中</h3>
+          <p>读的是理科。数学和信息技术课最合胃口，第一次用 Excel 把一班成绩做成图表时，觉得「表格」其实也能讲故事。毕业前开始自己照着教程写 Python 小脚本。</p>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <p class="timeline-date">2026.09 — 至今</p>
+          <h3>【学校名称】 · 数字经济专业（大一在读）</h3>
+          <p>主修方向是数字经济基础与数据分析入门。印象深的课有<strong>微观经济学</strong>、<strong>Python 程序设计</strong>、<strong>SQL 数据库基础</strong>和<strong>微积分</strong>：一门讲清「为什么这样选」，三门负责「怎么把事做出来」。</p>
+          <p class="timeline-extra">课余按「数据库设计 → 写 PRD → 后端 → 前端」的流程，完整做完并上线了三个全栈练习项目（见下方成果板块）。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 技能 -->
+  <section class="section" id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">03 / SKILLS</p>
+        <h2>技能与能力</h2>
+        <p class="section-desc">按真实水平写，不吹；旁边的浅色小字是目前的熟练度。</p>
+      </div>
+      <div class="skill-grid">
+        <article class="skill-card">
+          <div class="skill-icon" aria-hidden="true">&lt;/&gt;</div>
+          <h3>编程语言</h3>
+          <ul class="tag-list">
+            <li><span>Python</span><em>基础</em></li>
+            <li><span>SQL</span><em>基础</em></li>
+            <li><span>HTML / CSS</span><em>能独立写页面</em></li>
+            <li><span>TypeScript</span><em>跟着项目写过</em></li>
+          </ul>
+          <p class="skill-note">会写小脚本、会建表和查询，能独立做出一个静态网站；复杂算法还在学。</p>
+        </article>
+        <article class="skill-card">
+          <div class="skill-icon" aria-hidden="true">▦</div>
+          <h3>常用工具</h3>
+          <ul class="tag-list">
+            <li><span>VS Code</span><em>日常</em></li>
+            <li><span>Git / GitHub</span><em>会提交与推送</em></li>
+            <li><span>Excel</span><em>常用</em></li>
+            <li><span>WPS</span><em>常用</em></li>
+            <li><span>Node.js</span><em>跑过本地服务</em></li>
+          </ul>
+          <p class="skill-note">作业、文档和数据整理基本都在这几个工具里完成。</p>
+        </article>
+        <article class="skill-card">
+          <div class="skill-icon" aria-hidden="true">✦</div>
+          <h3>其他能力</h3>
+          <ul class="tag-list">
+            <li><span>普通话</span><em>母语</em></li>
+            <li><span>英语</span><em>四级备考中</em></li>
+            <li><span>Markdown 写作</span><em>常用</em></li>
+            <li><span>数据整理</span><em>课程练习</em></li>
+          </ul>
+          <p class="skill-note">喜欢把做过的东西写清楚，方便自己回头看，也方便别人看懂。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 成果与项目（重点） -->
+  <section class="section section-alt" id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">04 / PROJECTS · 重点</p>
+        <h2>成果与项目</h2>
+        <p class="section-desc">这一块是这学期最花时间的部分：三个完整项目都能在线点开使用，源码也公开在 GitHub。</p>
+      </div>
+
+      <div class="stats" aria-label="项目数据概览">
+        <div class="stat"><b>3</b><span>个完整全栈项目</span></div>
+        <div class="stat"><b>3</b><span>套互相独立的数据库</span></div>
+        <div class="stat"><b>17</b><span>项接口自动化测试通过</span></div>
+        <div class="stat"><b>1</b><span>个公网可访问站点</span></div>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-top">
+            <span class="project-no">01</span>
+            <span class="project-kind">个人博客系统</span>
+          </div>
+          <h3>青苔笔记 <span>MossNote</span></h3>
+          <p class="project-desc">一个安静的写作空间，主题是旧书、城市漫步和手冲咖啡。</p>
+          <ul class="feature-list">
+            <li>注册登录、文章增删改查、Markdown 写作与实时预览</li>
+            <li>分类与标签、点赞、评论、浏览量、草稿箱、按月归档、搜索</li>
+          </ul>
+          <div class="tech-row"><span>React</span><span>TypeScript</span><span>Express</span><span>MySQL / SQLite</span><span>JWT</span></div>
+          <div class="project-links">
+            <a href="https://fullstack-projects.app.workbuddy.host/blog/?sharecode=G66VMBWKQ5" target="_blank" rel="noreferrer">在线体验 →</a>
+            <a href="https://github.com/zyttt2007/fullstack-practice" target="_blank" rel="noreferrer">查看源码 ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <span class="project-no">02</span>
+            <span class="project-kind">问答社区</span>
+          </div>
+          <h3>灶台问答 <span>HearthAsk</span></h3>
+          <p class="project-desc">新手下厨互助社区，用积分把「问」和「答」串起来。</p>
+          <ul class="feature-list">
+            <li>提问扣 5 分、回答加 10 分、被采纳加 30 分，积分用事务保证一致</li>
+            <li>点赞去重、采纳答案、排行榜、热门标签、多种排序</li>
+          </ul>
+          <div class="tech-row"><span>React</span><span>TypeScript</span><span>Express</span><span>MySQL / SQLite</span><span>JWT</span></div>
+          <div class="project-links">
+            <a href="https://fullstack-projects.app.workbuddy.host/community/?sharecode=G66VMBWKQ5" target="_blank" rel="noreferrer">在线体验 →</a>
+            <a href="https://github.com/zyttt2007/fullstack-practice" target="_blank" rel="noreferrer">查看源码 ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <span class="project-no">03</span>
+            <span class="project-kind">Mini 在线商城</span>
+          </div>
+          <h3>一枚手作 <span>HandmadeOne</span></h3>
+          <p class="project-desc">独立手作器物小店，从加购到支付是一条完整链路。</p>
+          <ul class="feature-list">
+            <li>商品筛选、购物车库存校验、收货地址、优惠券满减</li>
+            <li>下单用事务扣库存并保存价格快照、模拟支付、取消订单恢复库存</li>
+          </ul>
+          <div class="tech-row"><span>React</span><span>TypeScript</span><span>Express</span><span>MySQL / SQLite</span><span>JWT</span></div>
+          <div class="project-links">
+            <a href="https://fullstack-projects.app.workbuddy.host/shop/?sharecode=G66VMBWKQ5" target="_blank" rel="noreferrer">在线体验 →</a>
+            <a href="https://github.com/zyttt2007/fullstack-practice" target="_blank" rel="noreferrer">查看源码 ↗</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="process">
+        <h3>我是怎么做出来的</h3>
+        <ol class="flow">
+          <li><b>01</b><span>数据库设计</span></li>
+          <li><b>02</b><span>写 PRD 需求</span></li>
+          <li><b>03</b><span>后端 API</span></li>
+          <li><b>04</b><span>前端页面</span></li>
+          <li><b>05</b><span>部署上线</span></li>
+        </ol>
+        <p>每个项目都先写 <code>database.md</code> 和 <code>PRD.md</code>，再写后端与前端；登录用 JWT + bcrypt，配置放 <code>.env</code>；下单、积分这类操作放在数据库事务里。三个项目各自独立的数据库和用户体系，互不干扰。</p>
+      </div>
+
+      <div class="verify-note">
+        <strong>验证情况：</strong>用真实浏览器逐个走通「登录 → 发文章 → 点赞评论」「加购 → 下单 → 支付」「提问 → 回答 → 积分变化」等完整流程，另有 17 项接口自动化检查全部通过（含事务扣库存、点赞去重、积分流转、订单状态）。
+      </div>
+    </div>
+  </section>
+
+  <!-- 爱好 -->
+  <section class="section" id="hobbies">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">05 / HOBBIES</p>
+        <h2>爱好</h2>
+        <p class="section-desc">不写代码的时候，大概在做这些事。</p>
+      </div>
+      <div class="hobby-grid">
+        <div class="hobby"><span class="hobby-mark">书</span><h3>翻旧书</h3><p>周末泡旧书店，喜欢扉页上陌生人留下的字迹。</p></div>
+        <div class="hobby"><span class="hobby-mark">走</span><h3>城市漫步</h3><p>不设目的地，沿着河岸和老街一直走下去。</p></div>
+        <div class="hobby"><span class="hobby-mark">咖</span><h3>手冲咖啡</h3><p>慢慢磨豆、慢慢注水，算是给自己的一点耐心训练。</p></div>
+        <div class="hobby"><span class="hobby-mark">码</span><h3>折腾代码</h3><p>把一个报错查明白，或者把小想法做成能点开的网页。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系 -->
+  <section class="section section-alt" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">06 / CONTACT</p>
+        <h2>联系我</h2>
+        <p class="section-desc">欢迎老师批评指正，也欢迎一起交流。</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-line"><span class="contact-label">邮箱</span><a href="mailto:your@email.com">your@email.com</a><small>【占位：换成你的邮箱】</small></div>
+        <div class="contact-line"><span class="contact-label">GitHub</span><a href="https://github.com/zyttt2007" target="_blank" rel="noreferrer">github.com/zyttt2007 ↗</a></div>
+        <div class="contact-line"><span class="contact-label">项目源码</span><a href="https://github.com/zyttt2007/fullstack-practice" target="_blank" rel="noreferrer">fullstack-practice ↗</a></div>
+        <div class="contact-line"><span class="contact-label">本页源码</span><a href="https://github.com/zyttt2007/zyttt2007.github.io" target="_blank" rel="noreferrer">纯 HTML + CSS，无框架、无后端 ↗</a></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>© 2026 林知远 · 数字经济专业大一</span>
+    <span>纯静态 HTML + CSS · 最后更新 2026-11-07</span>
+    <a href="#top">回到顶部 ↑</a>
+  </div>
+</footer>
+
+</body>
+</html>
