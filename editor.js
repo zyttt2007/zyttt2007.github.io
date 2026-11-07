@@ -71,6 +71,7 @@
       { key: 'kind', label: '分类（如 数据查询网站）', type: 'text' },
       { key: 'name', label: '作品名称', type: 'text' },
       { key: 'en', label: '英文名 / 副名', type: 'text' },
+      { key: 'image', label: '封面图地址', type: 'text', hint: '如 images/img-blog.jpg 或 https://... ；留空则不显示图片' },
       { key: 'desc', label: '一句话简介', type: 'area' },
       { key: 'features', label: '功能要点', type: 'lines', hint: '每行一条' },
       { key: 'tech', label: '技术标签', type: 'lines', hint: '每行一个，如 React' },
@@ -100,7 +101,7 @@
       case 'stats': return ['0', '说明'];
       case 'education': return { date: '', title: '', desc: '', extra: '' };
       case 'skills': return { icon: '✦', title: '', tags: [], note: '' };
-      case 'projects': return { kind: '', name: '', en: '', desc: '', features: [], tech: [], links: [] };
+      case 'projects': return { kind: '', name: '', en: '', image: '', desc: '', features: [], tech: [], links: [] };
       case 'hobbies': return { mark: '✦', title: '', desc: '' };
       case 'contacts': return { label: '', text: '', url: 'https://', note: '' };
       default: return {};
@@ -165,6 +166,7 @@
         <div class="stat">${tools('stats', i)}<b>${esc(x[0])}</b><span>${esc(x[1])}</span></div>`).join('') + addBtn('stats'),
     projects: (items) => items.map((x, i) => `
         <article class="project-card">${tools('projects', i)}
+          ${x.image ? `<a class="project-cover-link" href="${esc(url((x.links || [{}])[0].url))}" target="_blank" rel="noreferrer"><img class="project-cover" src="${esc(x.image)}" alt="${esc(x.name)} 网站真实界面截图" loading="lazy" /></a>` : ''}
           <div class="project-top"><span class="project-no">${String(i + 1).padStart(2, '0')}</span><span class="project-kind">${esc(x.kind)}</span></div>
           <h3>${esc(x.name)} <span>${esc(x.en)}</span></h3>
           <p class="project-desc">${esc(x.desc)}</p>

@@ -180,6 +180,13 @@ a:focus-visible{outline:3px solid rgba(47,98,216,.5); outline-offset:3px; border
   box-shadow:var(--shadow); transition:transform .2s, border-color .2s, box-shadow .2s;
 }
 .project-card:hover{transform:translateY(-3px); border-color:#c9d8f0; box-shadow:0 22px 42px -26px rgba(22,40,63,.42)}
+.project-cover-link{display:block; margin:0 0 16px; border-radius:10px}
+.project-cover-link:hover .project-cover{border-color:var(--blue)}
+.project-cover{
+  display:block; width:100%; aspect-ratio:16/10; object-fit:cover; object-position:top center;
+  border:1px solid var(--line); border-radius:10px; background:#f2f6fc;
+  transition:border-color .18s;
+}
 .project-top{display:flex; align-items:center; gap:10px; margin-bottom:12px}
 .project-no{font-size:12px; font-weight:700; color:#fff; background:var(--blue); border-radius:6px; padding:2px 8px}
 .project-kind{font-size:12px; color:var(--muted)}

@@ -46,10 +46,10 @@
       "note": "喜欢把做过的东西写清楚，方便自己回头看，也方便别人看懂。"
     }
   ],
-  "projectsDesc": "这一块最花时间：下面每个作品都能在线点开使用，含 7 个独立上线的网页成果和 3 个完整全栈项目。",
+  "projectsDesc": "这一块最花时间：下面每个作品都能在线点开使用，含 6 个独立上线的网页成果和 3 个完整全栈项目；最后三个项目配有线上真实界面截图。",
   "stats": [
-    ["10", "个可在线打开的作品"],
-    ["7", "个独立上线的网页成果"],
+    ["9", "个可在线打开的作品"],
+    ["6", "个独立上线的网页成果"],
     ["3", "个完整全栈项目"],
     ["17", "项接口自动化测试通过"]
   ],
@@ -64,18 +64,6 @@
       "links": [
         {"label": "在线打开 →", "url": "https://zyttt2007.github.io/shuzhi/"},
         {"label": "查看源码 ↗", "url": "https://github.com/zyttt2007/shuzhi"}
-      ]
-    },
-    {
-      "kind": "个人作品集",
-      "name": "前端作品集",
-      "en": "Portfolio",
-      "desc": "用 React + TypeScript 写的作品集，集中展示技能、项目与联系方式。",
-      "features": ["组件化页面结构，技能与项目分区展示", "响应式布局，桌面与手机都能正常浏览"],
-      "tech": ["React", "TypeScript", "前端工程化"],
-      "links": [
-        {"label": "在线打开 →", "url": "https://zyttt2007.github.io/yizhou-portfolio/"},
-        {"label": "查看源码 ↗", "url": "https://github.com/zyttt2007/yizhou-portfolio"}
       ]
     },
     {
@@ -128,6 +116,7 @@
     },
     {
       "kind": "全栈 · 个人博客系统",
+      "image": "images/img-blog.jpg",
       "name": "青苔笔记",
       "en": "MossNote",
       "desc": "一个安静的写作空间，主题是旧书、城市漫步和手冲咖啡。",
@@ -140,6 +129,7 @@
     },
     {
       "kind": "全栈 · 问答社区",
+      "image": "images/img-community.jpg",
       "name": "灶台问答",
       "en": "HearthAsk",
       "desc": "新手下厨互助社区，用积分把「问」和「答」串起来。",
@@ -152,6 +142,7 @@
     },
     {
       "kind": "全栈 · Mini 在线商城",
+      "image": "images/img-shop.jpg",
       "name": "一枚手作",
       "en": "HandmadeOne",
       "desc": "独立手作器物小店，从加购到支付是一条完整链路。",
