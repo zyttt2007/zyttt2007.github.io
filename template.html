@@ -4,8 +4,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{{NAME}} · 个人介绍网站</title>
+<meta name="theme-color" content="#f7f3ea" />
 <meta name="description" content="数字经济专业大二学生的个人介绍网站：关于我、学习经历、技能、项目成果、爱好与联系方式。" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%232f62d8'/%3E%3Ctext x='50' y='69' font-size='56' font-family='Georgia,serif' fill='white' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='6' fill='%233c5a44'/%3E%3Ctext x='50' y='69' font-size='56' font-family='Georgia,serif' fill='%23f7f3ea' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E" />
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -13,7 +14,7 @@
 <!--
   ============================================================
   这个页面的所有文字与项目卡片都可以在网页上直接修改、增删、保存。
-  右下角「✎ 编辑内容」进入编辑模式，改动自动保存在当前浏览器；
+  左下角「✎ 编辑内容」进入编辑模式，改动自动保存在当前浏览器；
   要让公网所有人都看到新内容，点编辑条上的「导出 index.html」
   再替换仓库里的同名文件即可。
   默认数据同时保存在 site-data.json，可用 python build.py 重建本页。
@@ -176,5 +177,6 @@
 
 <script id="site-data" type="application/json">{{SITE_DATA_JSON}}</script>
 <script src="editor.js" defer></script>
+<script src="motion.js" defer></script>
 </body>
 </html>

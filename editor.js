@@ -377,6 +377,8 @@
     const c = el.cloneNode(true);
     $$('[data-ui]', c).forEach(n => n.remove());
     $$('[contenteditable]', c).forEach(n => n.removeAttribute('contenteditable'));
+    c.classList.remove('reveal', 'in');
+    $$('.reveal', c).forEach(n => n.classList.remove('reveal', 'in'));
     return c.outerHTML;
   }
 
@@ -391,6 +393,8 @@
       $$('[data-ui]', c).forEach(el => el.remove());
       const body = c.querySelector('body');
       if (body) body.classList.remove('editing');
+      c.classList.remove('has-motion');
+      $$('.reveal', c).forEach(n => n.classList.remove('reveal', 'in'));
       source = '<!doctype html>\n' + c.outerHTML;
     }
 
