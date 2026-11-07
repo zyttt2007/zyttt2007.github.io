@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>林知远 · 个人介绍网站</title>
-<meta name="description" content="数字经济专业大一学生的个人介绍网站：关于我、学习经历、技能、全栈项目成果、爱好与联系方式。" />
+<meta name="description" content="数字经济专业大一学生的个人介绍网站：关于我、学习经历、技能、项目成果、爱好与联系方式。" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%232f62d8'/%3E%3Ctext x='50' y='69' font-size='56' font-family='Georgia,serif' fill='white' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E" />
 <link rel="stylesheet" href="style.css" />
 </head>
@@ -12,19 +12,17 @@
 
 <!--
   ============================================================
-  【占位信息替换清单】把下面这些文字换成你的真实信息即可
-  1. 林知远          -> 你的名字（出现在：title、导航栏、首屏大标题、关于我、页脚）
-  2. 【籍贯】        -> 你的家乡（关于我）
-  3. 【学校名称】    -> 你的大学（学习经历 · 大学那段）
-  4. 【高中名称】    -> 你的高中（学习经历 · 高中那段）
-  5. your@email.com  -> 你的邮箱（联系我）
-  其余内容（三个项目、技能、课程、爱好）都按真实情况写，可直接使用。
+  这个页面的所有文字与项目卡片都可以在网页上直接修改、增删、保存。
+  右下角「✎ 编辑内容」进入编辑模式，改动自动保存在当前浏览器；
+  要让公网所有人都看到新内容，点编辑条上的「导出 index.html」
+  再替换仓库里的同名文件即可。
+  默认数据同时保存在 site-data.json，可用 python build.py 重建本页。
   ============================================================
 -->
 
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand" href="#top">林知远<span class="brand-sub"> · 个人主页</span></a>
+    <a class="brand" href="#top"><span data-text="name">林知远</span><span class="brand-sub"> · 个人主页</span></a>
     <nav class="nav" aria-label="主导航">
       <a href="#about">关于我</a>
       <a href="#education">学习经历</a>
@@ -43,9 +41,9 @@
     <div class="hero-bg" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="hero-inner">
       <p class="hero-kicker">HELLO, NICE TO MEET YOU</p>
-      <h1>林知远<span class="dot">.</span></h1>
-      <p class="hero-sub">数字经济专业大一在读 <span class="slash">/</span> 热爱编程与折腾</p>
-      <p class="hero-desc">喜欢把课本上学到的东西，做成能点开、能真的用一下的网页。</p>
+      <h1><span data-text="name">林知远</span><span class="dot">.</span></h1>
+      <p class="hero-sub" data-text="heroSub">数字经济专业大一在读 / 热爱编程与折腾</p>
+      <p class="hero-desc" data-text="heroDesc">喜欢把课本上学到的东西，做成能点开、能真的用一下的网页。</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#projects">看看我做的项目 <span aria-hidden="true">→</span></a>
         <a class="btn btn-ghost" href="https://github.com/zyttt2007" target="_blank" rel="noreferrer">GitHub 主页</a>
@@ -60,7 +58,7 @@
       <div class="section-head">
         <p class="kicker">01 / ABOUT</p>
         <h2>关于我</h2>
-        <p class="section-desc">先简单认识一下。</p>
+        <p class="section-desc" data-text="aboutDesc">先简单认识一下。</p>
       </div>
       <div class="about-grid">
         <figure class="avatar-card">
@@ -84,11 +82,11 @@
           </div>
           <figcaption>没找到合适的照片，先放一张自画像 :)</figcaption>
         </figure>
-        <div class="about-text">
-          <p>我是林知远，来自【籍贯】，现在在【学校名称】读数字经济专业，大一。</p>
+        <div class="about-text" id="about-paragraphs" data-list="about">
+          <p>我是林知远，数字经济专业大一在读。</p>
           <p>专业课里最让我意外的是 Python 和 SQL：原来一堆看起来乱糟糟的数据，真的能被「问」出答案。微观经济学里那些关于选择和成本的说法，也常让我想到写代码时怎么取舍。</p>
           <p>我不太会来事儿，但遇到一个跑不通的报错，能安安静静坐一下午；搞清楚原因的那一刻比什么都高兴。</p>
-          <p>周末一般在旧书店晃、在城市里乱走，或者回家给自己冲一杯手冲咖啡。这个网站和下面三个小项目，都是这学期一点点折腾出来的。</p>
+          <p>周末一般在旧书店晃、在城市里乱走，或者回家给自己冲一杯手冲咖啡。下面这些网站，都是这学期一点点折腾出来的。</p>
         </div>
       </div>
     </div>
@@ -100,20 +98,20 @@
       <div class="section-head">
         <p class="kicker">02 / EDUCATION</p>
         <h2>学习经历</h2>
-        <p class="section-desc">从高中到现在，一条简单的时间线。</p>
+        <p class="section-desc" data-text="educationDesc">从高中到现在，一条简单的时间线。</p>
       </div>
-      <ol class="timeline">
+      <ol class="timeline" id="timeline" data-list="education">
         <li class="timeline-item">
           <div class="timeline-dot" aria-hidden="true"></div>
           <p class="timeline-date">2023.09 — 2026.06</p>
-          <h3>【高中名称】 · 高中</h3>
-          <p>读的是理科。数学和信息技术课最合胃口，第一次用 Excel 把一班成绩做成图表时，觉得「表格」其实也能讲故事。毕业前开始自己照着教程写 Python 小脚本。</p>
+          <h3>高中 · 理科</h3>
+          <p>数学和信息技术课最合胃口，第一次用 Excel 把一班成绩做成图表时，觉得「表格」其实也能讲故事。毕业前开始自己照着教程写 Python 小脚本。</p>
         </li>
         <li class="timeline-item">
           <div class="timeline-dot" aria-hidden="true"></div>
           <p class="timeline-date">2026.09 — 至今</p>
-          <h3>【学校名称】 · 数字经济专业（大一在读）</h3>
-          <p>主修方向是数字经济基础与数据分析入门。印象深的课有<strong>微观经济学</strong>、<strong>Python 程序设计</strong>、<strong>SQL 数据库基础</strong>和<strong>微积分</strong>：一门讲清「为什么这样选」，三门负责「怎么把事做出来」。</p>
+          <h3>大学 · 数字经济专业（大一在读）</h3>
+          <p>主修方向是数字经济基础与数据分析入门。印象深的课有微观经济学、Python 程序设计、SQL 数据库基础和微积分：一门讲清「为什么这样选」，三门负责「怎么把事做出来」。</p>
           <p class="timeline-extra">课余按「数据库设计 → 写 PRD → 后端 → 前端」的流程，完整做完并上线了三个全栈练习项目（见下方成果板块）。</p>
         </li>
       </ol>
@@ -126,9 +124,9 @@
       <div class="section-head">
         <p class="kicker">03 / SKILLS</p>
         <h2>技能与能力</h2>
-        <p class="section-desc">按真实水平写，不吹；旁边的浅色小字是目前的熟练度。</p>
+        <p class="section-desc" data-text="skillsDesc">按真实水平写，不吹；旁边的浅色小字是目前的熟练度。</p>
       </div>
-      <div class="skill-grid">
+      <div class="skill-grid" id="skill-grid" data-list="skills">
         <article class="skill-card">
           <div class="skill-icon" aria-hidden="true">&lt;/&gt;</div>
           <h3>编程语言</h3>
@@ -173,74 +171,131 @@
       <div class="section-head">
         <p class="kicker">04 / PROJECTS · 重点</p>
         <h2>成果与项目</h2>
-        <p class="section-desc">这一块是这学期最花时间的部分：三个完整项目都能在线点开使用，源码也公开在 GitHub。</p>
+        <p class="section-desc" data-text="projectsDesc">这一块最花时间：下面每个作品都能在线点开使用，含 7 个独立上线的网页成果和 3 个完整全栈项目。</p>
       </div>
 
-      <div class="stats" aria-label="项目数据概览">
+      <div class="stats" id="stats" data-list="stats" aria-label="项目数据概览">
+        <div class="stat"><b>10</b><span>个可在线打开的作品</span></div>
+        <div class="stat"><b>7</b><span>个独立上线的网页成果</span></div>
         <div class="stat"><b>3</b><span>个完整全栈项目</span></div>
-        <div class="stat"><b>3</b><span>套互相独立的数据库</span></div>
         <div class="stat"><b>17</b><span>项接口自动化测试通过</span></div>
-        <div class="stat"><b>1</b><span>个公网可访问站点</span></div>
       </div>
 
-      <div class="project-grid">
+      <div class="project-grid" id="project-grid" data-list="projects">
         <article class="project-card">
           <div class="project-top">
             <span class="project-no">01</span>
-            <span class="project-kind">个人博客系统</span>
+            <span class="project-kind">数据查询网站</span>
           </div>
-          <h3>青苔笔记 <span>MossNote</span></h3>
-          <p class="project-desc">一个安静的写作空间，主题是旧书、城市漫步和手冲咖啡。</p>
-          <ul class="feature-list">
-            <li>注册登录、文章增删改查、Markdown 写作与实时预览</li>
-            <li>分类与标签、点赞、评论、浏览量、草稿箱、按月归档、搜索</li>
-          </ul>
-          <div class="tech-row"><span>React</span><span>TypeScript</span><span>Express</span><span>MySQL / SQLite</span><span>JWT</span></div>
-          <div class="project-links">
-            <a href="https://fullstack-projects.app.workbuddy.host/blog/?sharecode=G66VMBWKQ5" target="_blank" rel="noreferrer">在线体验 →</a>
-            <a href="https://github.com/zyttt2007/fullstack-practice" target="_blank" rel="noreferrer">查看源码 ↗</a>
-          </div>
+          <h3>蔬知 <span>Shuzhi</span></h3>
+          <p class="project-desc">蔬菜百科、营养查询与「食物相克」对照，一站搞定。</p>
+          <ul class="feature-list"><li>按分类浏览蔬菜大全，支持实时联想搜索与详情查看</li><li>两种食材同食查询，另有趣味猜谜问答和记忆翻牌小游戏</li></ul>
+          <div class="tech-row"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>本地数据</span></div>
+          <div class="project-links"><a href="https://zyttt2007.github.io/shuzhi/" target="_blank" rel="noreferrer">在线打开 →</a><a href="https://github.com/zyttt2007/shuzhi" target="_blank" rel="noreferrer">查看源码 ↗</a></div>
         </article>
-
         <article class="project-card">
           <div class="project-top">
             <span class="project-no">02</span>
-            <span class="project-kind">问答社区</span>
+            <span class="project-kind">个人作品集</span>
           </div>
-          <h3>灶台问答 <span>HearthAsk</span></h3>
-          <p class="project-desc">新手下厨互助社区，用积分把「问」和「答」串起来。</p>
-          <ul class="feature-list">
-            <li>提问扣 5 分、回答加 10 分、被采纳加 30 分，积分用事务保证一致</li>
-            <li>点赞去重、采纳答案、排行榜、热门标签、多种排序</li>
-          </ul>
-          <div class="tech-row"><span>React</span><span>TypeScript</span><span>Express</span><span>MySQL / SQLite</span><span>JWT</span></div>
-          <div class="project-links">
-            <a href="https://fullstack-projects.app.workbuddy.host/community/?sharecode=G66VMBWKQ5" target="_blank" rel="noreferrer">在线体验 →</a>
-            <a href="https://github.com/zyttt2007/fullstack-practice" target="_blank" rel="noreferrer">查看源码 ↗</a>
-          </div>
+          <h3>前端作品集 <span>Portfolio</span></h3>
+          <p class="project-desc">用 React + TypeScript 写的作品集，集中展示技能、项目与联系方式。</p>
+          <ul class="feature-list"><li>组件化页面结构，技能与项目分区展示</li><li>响应式布局，桌面与手机都能正常浏览</li></ul>
+          <div class="tech-row"><span>React</span><span>TypeScript</span><span>前端工程化</span></div>
+          <div class="project-links"><a href="https://zyttt2007.github.io/yizhou-portfolio/" target="_blank" rel="noreferrer">在线打开 →</a><a href="https://github.com/zyttt2007/yizhou-portfolio" target="_blank" rel="noreferrer">查看源码 ↗</a></div>
         </article>
-
         <article class="project-card">
           <div class="project-top">
             <span class="project-no">03</span>
-            <span class="project-kind">Mini 在线商城</span>
+            <span class="project-kind">天气查询应用</span>
+          </div>
+          <h3>Skylight <span>天气查询</span></h3>
+          <p class="project-desc">输入城市就能看实时天气和多日预报，也支持自动定位。</p>
+          <ul class="feature-list"><li>城市搜索、实时天气与多日预报</li><li>浏览器自动定位，界面随天气状态变化</li></ul>
+          <div class="tech-row"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>天气 API</span></div>
+          <div class="project-links"><a href="https://yizhou-weather-1025.netlify.app" target="_blank" rel="noreferrer">在线打开 →</a></div>
+        </article>
+        <article class="project-card">
+          <div class="project-top">
+            <span class="project-no">04</span>
+            <span class="project-kind">效率工具</span>
+          </div>
+          <h3>Focus <span>番茄钟</span></h3>
+          <p class="project-desc">一个能自定义时长的专注计时器，带通知和统计。</p>
+          <ul class="feature-list"><li>自定义专注 / 休息时长，浏览器通知提醒</li><li>记录专注次数与时长，随时回看统计</li></ul>
+          <div class="tech-row"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Notification API</span></div>
+          <div class="project-links"><a href="https://yizhou-pomodoro-1025.netlify.app" target="_blank" rel="noreferrer">在线打开 →</a></div>
+        </article>
+        <article class="project-card">
+          <div class="project-top">
+            <span class="project-no">05</span>
+            <span class="project-kind">笔记应用</span>
+          </div>
+          <h3>Inkwell <span>Markdown 笔记</span></h3>
+          <p class="project-desc">本地优先的 Markdown 笔记本，边写边看渲染结果。</p>
+          <ul class="feature-list"><li>Markdown 实时预览，代码块高亮</li><li>内容保存在浏览器本地，打开就能接着写</li></ul>
+          <div class="tech-row"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>localStorage</span></div>
+          <div class="project-links"><a href="https://yizhou-notes-1025.netlify.app" target="_blank" rel="noreferrer">在线打开 →</a></div>
+        </article>
+        <article class="project-card">
+          <div class="project-top">
+            <span class="project-no">06</span>
+            <span class="project-kind">待办应用</span>
+          </div>
+          <h3>Taskflow <span>待办事项</span></h3>
+          <p class="project-desc">带优先级和完成率统计的待办清单。</p>
+          <ul class="feature-list"><li>新增、编辑、完成任务，支持多条件筛选</li><li>优先级标记与完成率统计</li></ul>
+          <div class="tech-row"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>localStorage</span></div>
+          <div class="project-links"><a href="https://yizhou-todo-1025.netlify.app" target="_blank" rel="noreferrer">在线打开 →</a></div>
+        </article>
+        <article class="project-card">
+          <div class="project-top">
+            <span class="project-no">07</span>
+            <span class="project-kind">个人数字名片</span>
+          </div>
+          <h3>ZY 数字名片 <span>Personal Homepage</span></h3>
+          <p class="project-desc">极简编辑感的个人主页，按「经历 / 作品 / 分享」组织内容。</p>
+          <ul class="feature-list"><li>时间线式的经历与作品展示</li><li>大字号排版，适配手机与桌面</li></ul>
+          <div class="tech-row"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <div class="project-links"><a href="https://zyttt2007.github.io/zy-homepage/" target="_blank" rel="noreferrer">在线打开 →</a><a href="https://github.com/zyttt2007/zy-homepage" target="_blank" rel="noreferrer">查看源码 ↗</a></div>
+        </article>
+        <article class="project-card">
+          <div class="project-top">
+            <span class="project-no">08</span>
+            <span class="project-kind">全栈 · 个人博客系统</span>
+          </div>
+          <h3>青苔笔记 <span>MossNote</span></h3>
+          <p class="project-desc">一个安静的写作空间，主题是旧书、城市漫步和手冲咖啡。</p>
+          <ul class="feature-list"><li>注册登录、文章增删改查、Markdown 写作与实时预览</li><li>分类标签、点赞、评论、草稿箱、按月归档与搜索</li></ul>
+          <div class="tech-row"><span>React</span><span>TypeScript</span><span>Express</span><span>MySQL / SQLite</span><span>JWT</span></div>
+          <div class="project-links"><a href="https://fullstack-projects.app.workbuddy.host/blog/?sharecode=G66VMBWKQ5" target="_blank" rel="noreferrer">在线体验 →</a><a href="https://github.com/zyttt2007/fullstack-practice" target="_blank" rel="noreferrer">查看源码 ↗</a></div>
+        </article>
+        <article class="project-card">
+          <div class="project-top">
+            <span class="project-no">09</span>
+            <span class="project-kind">全栈 · 问答社区</span>
+          </div>
+          <h3>灶台问答 <span>HearthAsk</span></h3>
+          <p class="project-desc">新手下厨互助社区，用积分把「问」和「答」串起来。</p>
+          <ul class="feature-list"><li>提问扣 5 分、回答加 10 分、被采纳加 30 分，积分用事务保证一致</li><li>点赞去重、采纳答案、排行榜、热门标签、多种排序</li></ul>
+          <div class="tech-row"><span>React</span><span>TypeScript</span><span>Express</span><span>MySQL / SQLite</span><span>JWT</span></div>
+          <div class="project-links"><a href="https://fullstack-projects.app.workbuddy.host/community/?sharecode=G66VMBWKQ5" target="_blank" rel="noreferrer">在线体验 →</a><a href="https://github.com/zyttt2007/fullstack-practice" target="_blank" rel="noreferrer">查看源码 ↗</a></div>
+        </article>
+        <article class="project-card">
+          <div class="project-top">
+            <span class="project-no">10</span>
+            <span class="project-kind">全栈 · Mini 在线商城</span>
           </div>
           <h3>一枚手作 <span>HandmadeOne</span></h3>
           <p class="project-desc">独立手作器物小店，从加购到支付是一条完整链路。</p>
-          <ul class="feature-list">
-            <li>商品筛选、购物车库存校验、收货地址、优惠券满减</li>
-            <li>下单用事务扣库存并保存价格快照、模拟支付、取消订单恢复库存</li>
-          </ul>
+          <ul class="feature-list"><li>商品筛选、购物车库存校验、收货地址、优惠券满减</li><li>下单用事务扣库存并保存价格快照，模拟支付、取消订单恢复库存</li></ul>
           <div class="tech-row"><span>React</span><span>TypeScript</span><span>Express</span><span>MySQL / SQLite</span><span>JWT</span></div>
-          <div class="project-links">
-            <a href="https://fullstack-projects.app.workbuddy.host/shop/?sharecode=G66VMBWKQ5" target="_blank" rel="noreferrer">在线体验 →</a>
-            <a href="https://github.com/zyttt2007/fullstack-practice" target="_blank" rel="noreferrer">查看源码 ↗</a>
-          </div>
+          <div class="project-links"><a href="https://fullstack-projects.app.workbuddy.host/shop/?sharecode=G66VMBWKQ5" target="_blank" rel="noreferrer">在线体验 →</a><a href="https://github.com/zyttt2007/fullstack-practice" target="_blank" rel="noreferrer">查看源码 ↗</a></div>
         </article>
       </div>
 
       <div class="process">
-        <h3>我是怎么做出来的</h3>
+        <h3 data-text="processTitle">我是怎么做出来的</h3>
         <ol class="flow">
           <li><b>01</b><span>数据库设计</span></li>
           <li><b>02</b><span>写 PRD 需求</span></li>
@@ -248,11 +303,11 @@
           <li><b>04</b><span>前端页面</span></li>
           <li><b>05</b><span>部署上线</span></li>
         </ol>
-        <p>每个项目都先写 <code>database.md</code> 和 <code>PRD.md</code>，再写后端与前端；登录用 JWT + bcrypt，配置放 <code>.env</code>；下单、积分这类操作放在数据库事务里。三个项目各自独立的数据库和用户体系，互不干扰。</p>
+        <p data-text="processText">每个项目都先写 database.md 和 PRD.md，再写后端与前端；登录用 JWT + bcrypt，配置放 .env；下单、积分这类操作放在数据库事务里。三个全栈项目各自独立的数据库和用户体系，互不干扰。</p>
       </div>
 
       <div class="verify-note">
-        <strong>验证情况：</strong>用真实浏览器逐个走通「登录 → 发文章 → 点赞评论」「加购 → 下单 → 支付」「提问 → 回答 → 积分变化」等完整流程，另有 17 项接口自动化检查全部通过（含事务扣库存、点赞去重、积分流转、订单状态）。
+        <strong>验证情况：</strong><span data-text="verifyText">用真实浏览器逐个走通「登录 → 发文章 → 点赞评论」「加购 → 下单 → 支付」「提问 → 回答 → 积分变化」等完整流程，另有 17 项接口自动化检查全部通过（含事务扣库存、点赞去重、积分流转、订单状态）。</span>
       </div>
     </div>
   </section>
@@ -263,9 +318,9 @@
       <div class="section-head">
         <p class="kicker">05 / HOBBIES</p>
         <h2>爱好</h2>
-        <p class="section-desc">不写代码的时候，大概在做这些事。</p>
+        <p class="section-desc" data-text="hobbiesDesc">不写代码的时候，大概在做这些事。</p>
       </div>
-      <div class="hobby-grid">
+      <div class="hobby-grid" id="hobby-grid" data-list="hobbies">
         <div class="hobby"><span class="hobby-mark">书</span><h3>翻旧书</h3><p>周末泡旧书店，喜欢扉页上陌生人留下的字迹。</p></div>
         <div class="hobby"><span class="hobby-mark">走</span><h3>城市漫步</h3><p>不设目的地，沿着河岸和老街一直走下去。</p></div>
         <div class="hobby"><span class="hobby-mark">咖</span><h3>手冲咖啡</h3><p>慢慢磨豆、慢慢注水，算是给自己的一点耐心训练。</p></div>
@@ -280,13 +335,13 @@
       <div class="section-head">
         <p class="kicker">06 / CONTACT</p>
         <h2>联系我</h2>
-        <p class="section-desc">欢迎老师批评指正，也欢迎一起交流。</p>
+        <p class="section-desc" data-text="contactDesc">欢迎老师批评指正，也欢迎一起交流。</p>
       </div>
-      <div class="contact-card">
-        <div class="contact-line"><span class="contact-label">邮箱</span><a href="mailto:your@email.com">your@email.com</a><small>【占位：换成你的邮箱】</small></div>
+      <div class="contact-card" id="contact-card" data-list="contacts">
         <div class="contact-line"><span class="contact-label">GitHub</span><a href="https://github.com/zyttt2007" target="_blank" rel="noreferrer">github.com/zyttt2007 ↗</a></div>
-        <div class="contact-line"><span class="contact-label">项目源码</span><a href="https://github.com/zyttt2007/fullstack-practice" target="_blank" rel="noreferrer">fullstack-practice ↗</a></div>
-        <div class="contact-line"><span class="contact-label">本页源码</span><a href="https://github.com/zyttt2007/zyttt2007.github.io" target="_blank" rel="noreferrer">纯 HTML + CSS，无框架、无后端 ↗</a></div>
+        <div class="contact-line"><span class="contact-label">作品主页</span><a href="https://zyttt2007.github.io/" target="_blank" rel="noreferrer">zyttt2007.github.io ↗</a></div>
+        <div class="contact-line"><span class="contact-label">全栈源码</span><a href="https://github.com/zyttt2007/fullstack-practice" target="_blank" rel="noreferrer">fullstack-practice ↗</a></div>
+        <div class="contact-line"><span class="contact-label">本页源码</span><a href="https://github.com/zyttt2007/zyttt2007.github.io" target="_blank" rel="noreferrer">zyttt2007.github.io 仓库 ↗</a><small>纯静态页面，内容可在本页直接编辑</small></div>
       </div>
     </div>
   </section>
@@ -295,11 +350,13 @@
 
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <span>© 2026 林知远 · 数字经济专业大一</span>
-    <span>纯静态 HTML + CSS · 最后更新 2026-11-07</span>
+    <span data-text="footerLeft">© 2026 林知远 · 数字经济专业大一</span>
+    <span data-text="footerRight">纯静态 HTML + CSS · 最后更新 2026-11-07</span>
     <a href="#top">回到顶部 ↑</a>
   </div>
 </footer>
 
+<script id="site-data" type="application/json">{"version":1,"name":"林知远","heroSub":"数字经济专业大一在读 / 热爱编程与折腾","heroDesc":"喜欢把课本上学到的东西，做成能点开、能真的用一下的网页。","aboutDesc":"先简单认识一下。","about":["我是林知远，数字经济专业大一在读。","专业课里最让我意外的是 Python 和 SQL：原来一堆看起来乱糟糟的数据，真的能被「问」出答案。微观经济学里那些关于选择和成本的说法，也常让我想到写代码时怎么取舍。","我不太会来事儿，但遇到一个跑不通的报错，能安安静静坐一下午；搞清楚原因的那一刻比什么都高兴。","周末一般在旧书店晃、在城市里乱走，或者回家给自己冲一杯手冲咖啡。下面这些网站，都是这学期一点点折腾出来的。"],"educationDesc":"从高中到现在，一条简单的时间线。","education":[{"date":"2023.09 — 2026.06","title":"高中 · 理科","desc":"数学和信息技术课最合胃口，第一次用 Excel 把一班成绩做成图表时，觉得「表格」其实也能讲故事。毕业前开始自己照着教程写 Python 小脚本。","extra":""},{"date":"2026.09 — 至今","title":"大学 · 数字经济专业（大一在读）","desc":"主修方向是数字经济基础与数据分析入门。印象深的课有微观经济学、Python 程序设计、SQL 数据库基础和微积分：一门讲清「为什么这样选」，三门负责「怎么把事做出来」。","extra":"课余按「数据库设计 → 写 PRD → 后端 → 前端」的流程，完整做完并上线了三个全栈练习项目（见下方成果板块）。"}],"skillsDesc":"按真实水平写，不吹；旁边的浅色小字是目前的熟练度。","skills":[{"icon":"<\/>","title":"编程语言","tags":[["Python","基础"],["SQL","基础"],["HTML / CSS","能独立写页面"],["TypeScript","跟着项目写过"]],"note":"会写小脚本、会建表和查询，能独立做出一个静态网站；复杂算法还在学。"},{"icon":"▦","title":"常用工具","tags":[["VS Code","日常"],["Git / GitHub","会提交与推送"],["Excel","常用"],["WPS","常用"],["Node.js","跑过本地服务"]],"note":"作业、文档和数据整理基本都在这几个工具里完成。"},{"icon":"✦","title":"其他能力","tags":[["普通话","母语"],["英语","四级备考中"],["Markdown 写作","常用"],["数据整理","课程练习"]],"note":"喜欢把做过的东西写清楚，方便自己回头看，也方便别人看懂。"}],"projectsDesc":"这一块最花时间：下面每个作品都能在线点开使用，含 7 个独立上线的网页成果和 3 个完整全栈项目。","stats":[["10","个可在线打开的作品"],["7","个独立上线的网页成果"],["3","个完整全栈项目"],["17","项接口自动化测试通过"]],"projects":[{"kind":"数据查询网站","name":"蔬知","en":"Shuzhi","desc":"蔬菜百科、营养查询与「食物相克」对照，一站搞定。","features":["按分类浏览蔬菜大全，支持实时联想搜索与详情查看","两种食材同食查询，另有趣味猜谜问答和记忆翻牌小游戏"],"tech":["HTML","CSS","JavaScript","本地数据"],"links":[{"label":"在线打开 →","url":"https://zyttt2007.github.io/shuzhi/"},{"label":"查看源码 ↗","url":"https://github.com/zyttt2007/shuzhi"}]},{"kind":"个人作品集","name":"前端作品集","en":"Portfolio","desc":"用 React + TypeScript 写的作品集，集中展示技能、项目与联系方式。","features":["组件化页面结构，技能与项目分区展示","响应式布局，桌面与手机都能正常浏览"],"tech":["React","TypeScript","前端工程化"],"links":[{"label":"在线打开 →","url":"https://zyttt2007.github.io/yizhou-portfolio/"},{"label":"查看源码 ↗","url":"https://github.com/zyttt2007/yizhou-portfolio"}]},{"kind":"天气查询应用","name":"Skylight","en":"天气查询","desc":"输入城市就能看实时天气和多日预报，也支持自动定位。","features":["城市搜索、实时天气与多日预报","浏览器自动定位，界面随天气状态变化"],"tech":["HTML","CSS","JavaScript","天气 API"],"links":[{"label":"在线打开 →","url":"https://yizhou-weather-1025.netlify.app"}]},{"kind":"效率工具","name":"Focus","en":"番茄钟","desc":"一个能自定义时长的专注计时器，带通知和统计。","features":["自定义专注 / 休息时长，浏览器通知提醒","记录专注次数与时长，随时回看统计"],"tech":["HTML","CSS","JavaScript","Notification API"],"links":[{"label":"在线打开 →","url":"https://yizhou-pomodoro-1025.netlify.app"}]},{"kind":"笔记应用","name":"Inkwell","en":"Markdown 笔记","desc":"本地优先的 Markdown 笔记本，边写边看渲染结果。","features":["Markdown 实时预览，代码块高亮","内容保存在浏览器本地，打开就能接着写"],"tech":["HTML","CSS","JavaScript","localStorage"],"links":[{"label":"在线打开 →","url":"https://yizhou-notes-1025.netlify.app"}]},{"kind":"待办应用","name":"Taskflow","en":"待办事项","desc":"带优先级和完成率统计的待办清单。","features":["新增、编辑、完成任务，支持多条件筛选","优先级标记与完成率统计"],"tech":["HTML","CSS","JavaScript","localStorage"],"links":[{"label":"在线打开 →","url":"https://yizhou-todo-1025.netlify.app"}]},{"kind":"个人数字名片","name":"ZY 数字名片","en":"Personal Homepage","desc":"极简编辑感的个人主页，按「经历 / 作品 / 分享」组织内容。","features":["时间线式的经历与作品展示","大字号排版，适配手机与桌面"],"tech":["HTML","CSS","JavaScript"],"links":[{"label":"在线打开 →","url":"https://zyttt2007.github.io/zy-homepage/"},{"label":"查看源码 ↗","url":"https://github.com/zyttt2007/zy-homepage"}]},{"kind":"全栈 · 个人博客系统","name":"青苔笔记","en":"MossNote","desc":"一个安静的写作空间，主题是旧书、城市漫步和手冲咖啡。","features":["注册登录、文章增删改查、Markdown 写作与实时预览","分类标签、点赞、评论、草稿箱、按月归档与搜索"],"tech":["React","TypeScript","Express","MySQL / SQLite","JWT"],"links":[{"label":"在线体验 →","url":"https://fullstack-projects.app.workbuddy.host/blog/?sharecode=G66VMBWKQ5"},{"label":"查看源码 ↗","url":"https://github.com/zyttt2007/fullstack-practice"}]},{"kind":"全栈 · 问答社区","name":"灶台问答","en":"HearthAsk","desc":"新手下厨互助社区，用积分把「问」和「答」串起来。","features":["提问扣 5 分、回答加 10 分、被采纳加 30 分，积分用事务保证一致","点赞去重、采纳答案、排行榜、热门标签、多种排序"],"tech":["React","TypeScript","Express","MySQL / SQLite","JWT"],"links":[{"label":"在线体验 →","url":"https://fullstack-projects.app.workbuddy.host/community/?sharecode=G66VMBWKQ5"},{"label":"查看源码 ↗","url":"https://github.com/zyttt2007/fullstack-practice"}]},{"kind":"全栈 · Mini 在线商城","name":"一枚手作","en":"HandmadeOne","desc":"独立手作器物小店，从加购到支付是一条完整链路。","features":["商品筛选、购物车库存校验、收货地址、优惠券满减","下单用事务扣库存并保存价格快照，模拟支付、取消订单恢复库存"],"tech":["React","TypeScript","Express","MySQL / SQLite","JWT"],"links":[{"label":"在线体验 →","url":"https://fullstack-projects.app.workbuddy.host/shop/?sharecode=G66VMBWKQ5"},{"label":"查看源码 ↗","url":"https://github.com/zyttt2007/fullstack-practice"}]}],"processTitle":"我是怎么做出来的","processText":"每个项目都先写 database.md 和 PRD.md，再写后端与前端；登录用 JWT + bcrypt，配置放 .env；下单、积分这类操作放在数据库事务里。三个全栈项目各自独立的数据库和用户体系，互不干扰。","verifyText":"用真实浏览器逐个走通「登录 → 发文章 → 点赞评论」「加购 → 下单 → 支付」「提问 → 回答 → 积分变化」等完整流程，另有 17 项接口自动化检查全部通过（含事务扣库存、点赞去重、积分流转、订单状态）。","hobbiesDesc":"不写代码的时候，大概在做这些事。","hobbies":[{"mark":"书","title":"翻旧书","desc":"周末泡旧书店，喜欢扉页上陌生人留下的字迹。"},{"mark":"走","title":"城市漫步","desc":"不设目的地，沿着河岸和老街一直走下去。"},{"mark":"咖","title":"手冲咖啡","desc":"慢慢磨豆、慢慢注水，算是给自己的一点耐心训练。"},{"mark":"码","title":"折腾代码","desc":"把一个报错查明白，或者把小想法做成能点开的网页。"}],"contactDesc":"欢迎老师批评指正，也欢迎一起交流。","contacts":[{"label":"GitHub","text":"github.com/zyttt2007 ↗","url":"https://github.com/zyttt2007","note":""},{"label":"作品主页","text":"zyttt2007.github.io ↗","url":"https://zyttt2007.github.io/","note":""},{"label":"全栈源码","text":"fullstack-practice ↗","url":"https://github.com/zyttt2007/fullstack-practice","note":""},{"label":"本页源码","text":"zyttt2007.github.io 仓库 ↗","url":"https://github.com/zyttt2007/zyttt2007.github.io","note":"纯静态页面，内容可在本页直接编辑"}],"footerLeft":"© 2026 林知远 · 数字经济专业大一","footerRight":"纯静态 HTML + CSS · 最后更新 2026-11-07"}</script>
+<script src="editor.js" defer></script>
 </body>
 </html>
